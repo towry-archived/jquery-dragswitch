@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dragswitch example</title>
+	<style>
+		body {
+			font-family: helvetica, arial;
+			padding: 20px;
+			overflow: hidden;
+		}
+		.ul, #list {
+			margin-right: 10%;
+		}
+		.ul {
+			border: 1px solid #334cc9;
+			width: 300px;
+		}
+		#list:after,
+		.ul:after {
+			display: block;
+			content: '';
+			clear: both;
+		}
+		.li {
+			color: #555;
+			float: left;
+			width: 80px;
+			height: 80px;
+			border: 1px solid #666;
+			margin: 5px;
+			text-align: center;
+			line-height: 80px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		#list .li {
+			border-color: red;
+		}
+		#list {
+			margin-top: 20px;
+			margin-bottom: 50px;
+			border: 1px dashed #8ca2f0;
+			padding-right: 150px;
+		}
+		.placeholder {
+			border: 2px dashed #ddd;
+		}
+
+		#list, .ul {
+			float: left;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="ul">
+
+	</div>
+
+	<div id="list">
+		<div class="li item-7" data-index="7">7</div>
+		<div class="li item-8" data-index="8">8</div>
+		<div class="li item-9" data-index="9">9</div>
+		<div class="li item-10" data-index="10">10</div>
+		<div class="li item-11" data-index="11">11</div>
+		<div class="li item-12" data-index="12">12</div>
+		<div class="li item-13" data-index="13">13</div>
+		<div class="li item-14" data-index="14">14</div>
+		<div class="li item-15" data-index="15">15</div>
+		<div class="li item-16" data-index="16">16</div>
+	</div>
+
+
+	<script src="../jquery.min.js"></script>
+	<script src="../jquery.dragswitch.min.js"></script>
+	<script>
+		$('.ul, #list').dragswitch(function (all) {
+			all('.li').dragEnd(function () {
+				console.log('drag end');
+			}).dragStart(function () {
+				console.log("drag start");
+			}).config({
+				between: false
+			}).placeholder(function (p) {
+				p.css('border-color', 'green');
+			})
+		});
+	</script>
+</body>
+</html>

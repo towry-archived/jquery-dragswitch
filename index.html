@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery-dragswitch</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="jQuery plugin drag sort elements" />
+	<meta name="keywords" content="jquery-plugin, dragdrop, dragsort, javascript" />
+	<script type="text/javascript">document.createElement('section');</script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="main">
+		<h1>
+			jQuery-dragswitch
+		</h1>
+		<p class="tagline">Drag switch the elements, make the elements sortable</p>
+		<p><a href="https://github.com/towry/jquery-dragswitch" title="fork me!">github.com/towry/jquery-dragswitch</a></p>
+
+		<section class="sec">
+			<h2>Example</h2>
+			<p><a href="./_example/index.html">dev example</a></p>
+
+			<div id="list1">
+				<div class="item item-1" data-index="1">1</div>
+				<div class="item item-2" data-index="2">2</div>
+				<div class="item item-3" data-index="3">3</div>
+				<div class="item item-4" data-index="4">4</div>
+				<div class="item item-5" data-index="5">5</div>
+			</div>
+
+			<div id="list2">
+				<div class="item item-6" data-index="6">6</div>
+				<div class="item item-7" data-index="7">7</div>
+				<div class="item item-8" data-index="8">8</div>
+				<div class="item item-9" data-index="9">9</div>
+				<div class="item item-10" data-index="10">10</div>
+				<div class="item item-11" data-index="11">11</div>
+			</div>
+
+			<div class="source">
+			<a id="source-href" href="#source">source</a>
+			<div id="source" class="hidden">
+<pre>
+	$('#list1, #list2').dragswitch(function (d) {
+ 		d('.item').dragStart(function () {
+ 			console.log('drag start');
+ 		}).dragEnd(function () {
+ 			console.log('drag end');
+ 		}).config({
+ 			between: true
+ 		}).placeholder(function (p) {
+ 			p.css('border-color', 'green');
+ 		})
+ 	})
+</pre>
+			</div>
+			</div>
+		</section>
+
+		<section class="sec">
+			<h2>Install</h2>
+			<h3>Via package managers</h3>
+			<p>Install with <b>Bower</b>: <code>bower install jquery-dragswitch</code></p>
+		</section>
+
+		<div id="footer">
+		<p>Copyright &copy; 2015 by <a href="http://towry.me">Towry Wang</a>. Licensed under MIT license: http://towry.me/mit-license#2015</p>
+		</div>
+	</div>
+	<div id="github-ribbon">
+		<a href="https://github.com/towry/jquery-dragswitch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+	</div>
+
+	<script src="jquery.min.js"></script>
+	<script src="jquery.dragswitch.min.js"></script>
+	<script>
+	 (function ($) {
+	 	$('#list1, #list2').dragswitch(function (d) {
+	 		d('.item').dragStart(function () {
+	 			console.log('drag start');
+	 		}).dragEnd(function () {
+	 			console.log('drag end');
+	 		}).config({
+	 			between: true
+	 		}).placeholder(function (p) {
+	 			p.css('border-color', 'green');
+	 		})
+	 	})
+
+	 	$("#source-href").on('click', function (e) {
+	 		e.preventDefault();
+
+	 		$("#source").toggleClass('hidden');
+	 	});
+	 }(jQuery));
+	</script>
+</body>
+</html>
