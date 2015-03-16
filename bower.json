@@ -1,7 +1,27 @@
 {
-	"name": "dragswitch",
-	"private": true,
-	"devDependencies": {
-		"jquery": "*"
-	}
+  "name": "jquery-dragswitch",
+  "version": "0.1.0",
+  "homepage": "https://github.com/towry/jquery-dragswitch",
+  "authors": [
+    "towry <tovvry@gmail.com>"
+  ],
+  "description": "jQuery plugin that drag switch elements",
+  "main": "jquery.dragswitch.min.js",
+  "keywords": [
+    "jquery-plugin",
+    "dragsort",
+    "draggable",
+    "dragdrop"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.1.3"
+  }
 }

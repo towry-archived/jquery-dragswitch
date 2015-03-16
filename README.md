@@ -1,16 +1,30 @@
 # jquery-dragswitch
 
-jQuery plugin to drag switch elements
+jQuery plugin that drag switch elements
+
+http://towry.me/jquery-dragswitch
 
 # Usage
 
 ```javascript
-$('.ul').dragswitch(function (drag) {
-	drag('.li .box').dragEnd(function () {
+$('#list1, #list2').dragswitch(function (drag) {
+	drag('.item').dragEnd(function () {
 		// when drag end	
 	}).dragStart(function () {
 		// when drag start
-	});
+	}).config({
+		between: true
+	}).placeholder(function (p) {
+	 	// p is a jquery object
+	 	p.css('border-color': 'green');
+	})
+});
+```
+
+Or 
+```javascript
+$('#list1, #list2, #list3').dragswitch(function (d) {
+	d(['.item_of_list1_and_list2', '.item_of_list3']);
 });
 ```
 

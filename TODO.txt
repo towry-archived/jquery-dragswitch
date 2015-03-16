@@ -1,2 +1,0 @@
-[ ] add window.onscroll
-[ ] drag item position issue
