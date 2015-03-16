@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dragswitch example</title>
+	<style>
+		body {
+			font-family: helvetica, arial;
+			padding: 20px;
+			overflow: hidden;
+		}
+		.ul, #list {
+			margin-right: 10%;
+		}
+		.ul {
+			border: 1px solid #334cc9;
+		}
+		#list:after,
+		.ul:after {
+			display: block;
+			content: '';
+			clear: both;
+		}
+		.li {
+			color: #555;
+			float: left;
+			width: 80px;
+			height: 80px;
+			border: 1px solid #666;
+			margin: 15px;
+			text-align: center;
+			line-height: 80px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		#list .li {
+			border-color: red;
+		}
+		#list {
+			margin-top: 20px;
+			margin-bottom: 50px;
+			border: 1px dashed #8ca2f0;
+			padding-right: 150px;
+		}
+		.placeholder {
+			border: 2px dashed #ddd;
+		}
+
+		#list, .ul {
+			float: left;
+		}
+		#list1 .item,
+#list2 .item {
+  width: 60px;
+  height: 60px;
+  border-width: 1px;
+  border-style: solid;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  line-height: 60px;
+}
+
+#list1 .item {
+  border-color: #7ca9cc;
+}
+
+#list2 .item {
+  border-color: #c0077a;
+}
+
+#list1:after, #list2:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+#list1 {
+  margin-bottom: 20px;
+}
+
+#list1, #list2 {
+  max-width: 300px;
+}
+	</style>
+</head>
+<body>
+
+<!-- 	<div class="ul">
+		<div class="li item-1" data-index="1">1</div>
+		<div class="li item-2" data-index="2">2</div>
+		<div class="li item-3" data-index="3">3</div>
+		<div class="li item-4" data-index="4">4</div>
+		<div class="li item-5" data-index="5">5</div>
+	</div>
+
+	<div id="list">
+		<div class="li item-7" data-index="7">7</div>
+		<div class="li item-8" data-index="8">8</div>
+		<div class="li item-9" data-index="9">9</div>
+		<div class="li item-10" data-index="10">10</div>
+		<div class="li item-11" data-index="11">11</div>
+	</div> -->
+
+	<div id="list1">
+		<div class="item item-1" data-index="1">1</div>
+		<div class="item item-2" data-index="2">2</div>
+		<div class="item item-3" data-index="3">3</div>
+		<div class="item item-4" data-index="4">4</div>
+		<div class="item item-5" data-index="5">5</div>
+	</div>
+
+	<div id="list2">
+		<div class="item item-6" data-index="6">6</div>
+		<div class="item item-7" data-index="7">7</div>
+		<div class="item item-8" data-index="8">8</div>
+		<div class="item item-9" data-index="9">9</div>
+		<div class="item item-10" data-index="10">10</div>
+		<div class="item item-11" data-index="11">11</div>
+	</div>
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../dragswitch.js"></script>
+	<script>
+		$('#list1, #list2').dragswitch(function (d) {
+ 		d('.item').dragStart(function () {
+ 			console.log('drag start');
+ 		}).dragEnd(function () {
+ 			console.log('drag end');
+ 		}).config({
+ 			between: true
+ 		}).placeholder(function (p) {
+ 			p.css('border-color', 'green');
+ 		})
+ 	})
+	</script>
+</body>
+</html>

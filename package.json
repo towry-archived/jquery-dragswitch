@@ -1,0 +1,27 @@
+{
+  "name": "jquery-dragswitch",
+  "version": "1.0.0",
+  "description": "jQuery plugin that drag switch elements",
+  "main": "jquery.dragswitch.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:towry/jquery-dragswitch.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "draggable",
+    "dragsort",
+    "switch"
+  ],
+  "author": "Towry Wang",
+  "license": "MIT"
+}

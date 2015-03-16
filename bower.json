@@ -1,0 +1,7 @@
+{
+	"name": "dragswitch",
+	"private": true,
+	"devDependencies": {
+		"jquery": "*"
+	}
+}
