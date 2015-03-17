@@ -37,7 +37,7 @@
     // if nothing is selected, just return;
     if (!jqr.length) return jqr;
 
-    window._d = Dragswitch(jqr, fn);
+    Dragswitch(jqr, fn);
 
     return jqr;
   }
@@ -77,6 +77,7 @@
 
     // cache stuff
     this.doc = $(document);
+
     this.drop = true;
     this.moveStarted = false;
 
@@ -633,7 +634,7 @@
        for (var j = 0, jj = table.length; j < jj; j++) {
          cur = table[j];
          
-         // if (cur.dom.is(this.draggy)) continue;
+         if (cur.dom.is(this.draggy)) continue;
 
          offset = cur.dom.offset();
          cur.offset = {
