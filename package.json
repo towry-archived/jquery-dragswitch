@@ -1,6 +1,6 @@
 {
   "name": "jquery-dragswitch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "jQuery plugin that drag switch elements",
   "main": "jquery.dragswitch.js",
   "dependencies": {
